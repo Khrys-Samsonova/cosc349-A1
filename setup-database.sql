@@ -27,3 +27,6 @@ create table orders (
     foreign key (meal)
         references meals(meal_ID)
 );
+
+INSERT INTO user (user_ID, user_name, user_address) VALUES ('01', 'Khrys', '309b George st');
+INSERT INTO meals (meal_ID, meal_name, meal_description, meal_made_date, meal_perishable, meal_perish_date) VALUES ('01', 'Stew', 'Vege Stew','2021-08-28','1','2021-08-31' );
