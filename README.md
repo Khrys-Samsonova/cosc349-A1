@@ -1,2 +1,2 @@
 # cosc349-A1
-Assignment 1 for UO paper cosc349
+Assignment 1 for UoO paper cosc349
