@@ -23,5 +23,5 @@ create table orders (
     PRIMARY KEY (order_ID)
 );
 
-INSERT INTO users (user_ID, user_name, user_address) VALUES ('01', 'Khrys', '309b George st');
+INSERT INTO users (user_ID, user_name, user_password, user_address) VALUES ('01', 'Khrys','123', '309b George st');
 INSERT INTO meals (meal_ID, meal_name, meal_description, meal_made_date, meal_perishable, meal_perish_date) VALUES ('01', 'Stew', 'Vege Stew','2021-08-28','1','2021-08-31' );
