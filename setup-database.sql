@@ -14,12 +14,7 @@ create table meals (
     meal_made_date DATE,
     meal_perishable boolean default 0,
     meal_perish_date DATE,
-
     PRIMARY KEY (meal_ID),
-
-    user_meal varchar(10) not null,
-    foreign key (user_meal)
-        references users(user_ID)
 );
 
 create table orders (
@@ -29,9 +24,6 @@ create table orders (
 
     PRIMARY KEY (order_ID),
 
-    meal varchar(10) not null,
-    foreign key (meal)
-        references meals(meal_ID)
 );
 
 INSERT INTO users (user_ID, user_name, user_address) VALUES ('01', 'Khrys', '309b George st');
