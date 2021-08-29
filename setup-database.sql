@@ -3,7 +3,6 @@ create table users (
     user_name varchar(62),
     user_password varchar(64),
     user_address varchar(256),
-
     PRIMARY KEY (user_ID)
 );
 
@@ -14,16 +13,14 @@ create table meals (
     meal_made_date DATE,
     meal_perishable boolean default 0,
     meal_perish_date DATE,
-    PRIMARY KEY (meal_ID),
+    PRIMARY KEY (meal_ID)
 );
 
 create table orders (
     order_ID varchar(10),
     order_date DATE,
     order_delivered boolean default 0,
-
-    PRIMARY KEY (order_ID),
-
+    PRIMARY KEY (order_ID)
 );
 
 INSERT INTO users (user_ID, user_name, user_address) VALUES ('01', 'Khrys', '309b George st');
