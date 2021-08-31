@@ -130,6 +130,34 @@ Vagrant.configure("2") do |config|
       service mysql restart
     SHELL
   end
+  
+  # Here we are defining the admin virtual machine
+  # this machine is essentially a user with full admin privileges
+  config.vm.define "admin" do |admin|
+    admin.vm.hostname = "admin"
+    
+    # Setting up the IP address using the patterns from above
+    admin.vm.network "private_network", ip: "192.168.2.13"
+    admin.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+
+    # Setting up the shell provisions for admin - at this point, same as user
+    admin.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y apache2 php libapache2-mod-php php-mysql
+
+      # Below is copied and pasted from the webserver
+      # at this moment, it generates a copy of the user website
+      # Change VM's admin's configuration to use shared folder.
+      # (Look inside test-website.conf for specifics.)
+      cp /vagrant/test-website.conf /etc/apache2/sites-available/
+      # activate our website configuration ...
+      a2ensite test-website
+      # ... and disable the default website provided with Apache
+      a2dissite 000-default
+      # Reload the webserver configuration, to pick up our changes
+      service apache2 reload
+    SHELL
+  end
 
 end
 
