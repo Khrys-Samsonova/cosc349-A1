@@ -8,7 +8,7 @@
 # connected together using an internal network with manually-assigned
 # IP addresses for the VMs.
 
-Vagrant.configure("3") do |config|
+Vagrant.configure("2") do |config|
   # (We have used this box previously, so reusing it here should save a
   # bit of time by using a cached copy.)
   config.vm.box = "ubuntu/xenial64"
