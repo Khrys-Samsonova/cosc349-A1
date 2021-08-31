@@ -77,6 +77,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "admin" do |admin|
     admin.vm.hostname = "admin"
     
+    # Set up vm to listen on different port with a different ip address from webserver
+    admin.vm.network "forwarded_port", guest: 81, host: 8081, host_ip: "127.0.0.2"
+
     # Setting up the IP address using the patterns from above
     admin.vm.network "private_network", ip: "192.168.2.13"
     admin.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
@@ -90,9 +93,9 @@ Vagrant.configure("2") do |config|
       # at this moment, it generates a copy of the user website
       # Change VM's admin's configuration to use shared folder.
       # (Look inside test-website.conf for specifics.)
-      cp /vagrant/test-website.conf /etc/apache2/sites-available/
+      cp /vagrant/admin-website.conf /etc/apache2/sites-available/
       # activate our website configuration ...
-      a2ensite test-website
+      a2ensite admin-website
       # ... and disable the default website provided with Apache
       a2dissite 000-default
       # Reload the webserver configuration, to pick up our changes
