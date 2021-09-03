@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
     admin.vm.hostname = "admin"
     
     # Set up vm to listen on different port with a different ip address from webserver
-    admin.vm.network "forwarded_port", guest: 81, host: 8081, host_ip: "127.0.0.2"
+    admin.vm.network "forwarded_port", guest: 81, host: 8081, host_ip: "127.0.0.1"
 
     # Setting up the IP address using the patterns from above
     admin.vm.network "private_network", ip: "192.168.2.13"
