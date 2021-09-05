@@ -10,7 +10,7 @@ The admin webserver, which is used by the admins to resolve any administrative i
 The database server, used for storing the required data and information about users, restaurants, meals, and orders
 
 
-(HOW THE VMs INTERACT:)
+webserver vm and admin vm both read their information from the database vm to display on their own websites
 
 
 In order to use this application:
