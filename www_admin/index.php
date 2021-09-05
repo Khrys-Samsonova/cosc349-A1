@@ -23,6 +23,8 @@ th, td {
 <table border="1">
 <tr><th>User Name</th><th>User Address</th></tr>
 
+<!-- Fetch and display data from the users table and display it in a table -->
+
 <?php
  
 $db_host   = '192.168.2.12';
@@ -42,6 +44,8 @@ while($row = $q->fetch()){
 
 ?>
 </table>
+
+<!-- fetch and display data from the resturaunts table and display it in a table -->
 
 <p>Showing contents of resturaunts table:</p>
 
@@ -68,6 +72,8 @@ while($row = $q->fetch()){
 ?>
 </table>
 
+<!-- fetch and display data from the meals table, then display it in a table -->
+
 <p>Showing contents of meals table:</p>
 
 <table border="1">
@@ -93,6 +99,8 @@ while($row = $q->fetch()){
 
 ?>
 </table>
+
+<!-- fetch and display data from the orders table, then display the data in a table -->
 
 <p>Showing contents of orders table:</p>
 
