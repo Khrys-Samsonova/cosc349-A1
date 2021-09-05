@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
 
   # have to increase to fix the timeout issue (since my laptop struggles)
   config.vm.boot_timeout = 2400
+
+
   
   config.vm.define "webserver" do |webserver|
     # These are options specific to the webserver VM
@@ -78,6 +80,7 @@ Vagrant.configure("2") do |config|
     admin.vm.hostname = "admin"
     
     # Set up vm to listen on different port with a different ip address from webserver
+    # we also tried 127.0.0.2 as an IP, but this would cause an error that "admin website could not be found"
     admin.vm.network "forwarded_port", guest: 81, host: 8081, host_ip: "127.0.0.1"
 
     # Setting up the IP address using the patterns from above
