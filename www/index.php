@@ -4,7 +4,6 @@
 <title>Database test page</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <h1 style="text-align:center">Database test page (users)</h1>
 
