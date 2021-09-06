@@ -1,24 +1,14 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
 <head><title>Admin test page</title>
-<style>
-th { text-align: left; }
-
-table, th, td {
-  border: 2px solid grey;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 0.2em;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<h1>Admin test page</h1>
+<h1 style="text-align:center">Admin test page</h1>
 
-<p>Showing contents of users table:</p>
+<hr class="solid">
+<p style="text-align:center">Showing contents of users table:</p>
 
 <table border="1">
 <tr><th>User Name</th><th>User Address</th></tr>
@@ -44,7 +34,7 @@ while($row = $q->fetch()){
 ?>
 </table>
 
-<p>Showing contents of restaurants table:</p>
+<p style="text-align:center">Showing contents of restaurants table:</p>
 
 <table border="1">
 <tr><th>Restaurant</th><th>Restaurant Address</th></tr>
@@ -70,7 +60,7 @@ while($row = $q_r->fetch()){
 ?>
 </table>
 
-<p>Showing contents of meals table:</p>
+<p style="text-align:center">Showing contents of meals table:</p>
 
 <table border="1">
 <tr><th>Meal Name</th><th>Meal Description</th><th>Date Made</th><th>Use By</th><th>Delivery</th></tr>
@@ -96,7 +86,7 @@ while($row = $q_m->fetch()){
 ?>
 </table>
 
-<p>Showing contents of orders table:</p>
+<p style="text-align:center">Showing contents of orders table:</p>
 
 <table border="1">
 <tr><th>Order ID</th><th>Time Placed</th></tr>
