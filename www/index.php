@@ -6,12 +6,14 @@
 </head>
 
 <body>
-<h1>Database test page</h1>
+<h1 style="text-align:center">Database test page (users)</h1>
 
-<p>Showing available meals:</p>
+<hr class="solid">
+
+<p style="text-align:center">Showing available meals:</p>
 
 
-<table border="1">
+<table class="center" border="1">
 <tr><th>Meal Name</th><th>Meal Description</th><th>Date Made</th><th>Use By</th><th>Delivery</th></tr>
 
 <?php
